@@ -31,25 +31,27 @@ if (isset($_POST['submit'])) {
 	<head>
 		<meta charset="utf-8">
 		<title>Connexion</title>
+		<link rel="stylesheet" href="connexion.css" type="text/css">
 	</head>
 	<body class="color">
 		<!-- Header -->
-			<header id="header">
-				<nav><a href="index.php">Accueil</a> | <a href="inscription.php">Inscription</a></nav>
-			</header>
+			
 			<!-- Main -->
 		<main>
-			<h1>Connexion</h1>
+			<fieldset>
+			<legend>Connexion</legend>
 				<form method="post" action="connexion.php">
-        			<p>Login</p>
-        			<input class="input" type="text" name="login">
-        			<p>Mot de passe</p>
-        			<input class="input" type="password" name="password"><br/><br/>
-        			<input class="input" type="submit" name="submit" value="Valider"><br/>
+        			<label for="login">Login</label>
+        			<input class="input" type="text" name="login" autocomplete="on" placeholder="Entrez votre login" title="Login">
+        			<label for="password">Mot de passe</label>
+					<input class="input" type="password" name="password" autocomplete="on" placeholder="Entrez votre mdp" title="mot de passe"><br/><br/>
+					<div class="center">
+					<input class="input" type="submit" name="submit" value="Valider"><br/>
+					</div>
 				</form>
+			</fieldset>
 		</main>
 		<!-- Footer -->
-			<footer>
-			</footer>
+			
 	</body> 
 </html>
