@@ -61,30 +61,3 @@ if(isset($_POST['submit']))
 			</footer>
 	</body> 
 </html>
-
-<?php
-echo '<style>
-h1
-{
-	text-align : center;
-	text-decoration : underline;
-}
-
-p
-{
-	text-align : center;
-	color : black;
-}
-
-.input
-{
-	display:block;
-	margin:auto;
-}
-
-.color
-{
-	background-color: #E0D8E0;
-}
-</style>';
-?>
