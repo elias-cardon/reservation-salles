@@ -33,7 +33,7 @@ if(isset($_POST['submit']))
 
 
 <!DOCTYPE html>
-<html>
+<html lang="fr" dir="ltr">
 	<head>
 		<meta charset="utf-8">
 		<title>Inscription</title>
