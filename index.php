@@ -1,4 +1,4 @@
-<!-- Quand la vie te donne des citrons, dis que ceux sont des oranges jaunes et vend-les deux fois plus cher. -->
+<!-- [ russian roulette is not the same without a gun ] -->
 <?php ?>
 
 <html>
