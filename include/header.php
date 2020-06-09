@@ -20,7 +20,7 @@ if (isset($_SESSION['login'])) {
                 <div class="btn"><a href="reservation.php">RESERVATION</a></div>
                 <div class="btn"><a href="planning.php">PLANNING</a></div>
                 <div class="btn"><a href="profil.php">PROFIL</a></div>
-                <div class="btn"><a href="index.php?deco">DECONNEXION</a></div>
+                <div class="btn"><a href="logout.php">DECONNEXION</a></div>
                     </ul> 
                   </div> 
                 </nav>';
