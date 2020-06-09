@@ -7,6 +7,7 @@ if (isset($_POST["deconnexion"])) {
     session_destroy();
     header('Location:index.php');
 }
+?>
 
 <!DOCTYPE html>
 <html>
@@ -22,16 +23,9 @@ if (isset($_POST["deconnexion"])) {
     <?php include("includes/header.php")?>
    </header>
 		<!-- Header -->
-			<header id="header">
-				<ul id="lien">
-					<li><a href="inscription.php">Inscription</a></li>
-					<li><a href="connexion.php">Connexion</a></li>
-				</ul>
-			</header>
+        <?php include('header.php'); ?>
 
 		<!-- Main -->
 
 		<!-- Footer -->
-			<footer>
-
-			</footer>
+			

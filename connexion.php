@@ -35,7 +35,7 @@ if (isset($_POST['submit'])) {
 	</head>
 	<body class="color">
 		<!-- Header -->
-			
+			<?php include('header.php'); ?>
 			<!-- Main -->
 		<main>
 			<fieldset>
