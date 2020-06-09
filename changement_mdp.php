@@ -9,7 +9,7 @@ if (isset($_SESSION['login'])) {
 		if ($password && $newpassword && $repeatnewpassword) {
 			if ($newpassword == $repeatnewpassword) {
 				$db = mysqli_connect('localhost', 'root', '') or die('Erreur');
-				mysqli_select_db($db, 'reservationsalles');
+				mysqli_select_db($db, 'livreor');
 				$query = mysqli_query($db, "SELECT * FROM utilisateurs WHERE login = '$username' AND password = '$password'");
 				$rows = mysqli_num_rows($query);
 				if ($rows==1) {
@@ -30,19 +30,6 @@ if (isset($_SESSION['login'])) {
 			echo "Veuillez saisir tous les champs";
 		}
 	}
-
-
-
-echo '<form method="POST" action="changement.php">
-<p>Votre ancien mot de passe</p>
-<input class="input" type="password" name="password"<br/>
-<p>Votre nouveau mot de passe</p>
-<input class="input" type="password" name="newpassword">
-<p>Répétez votre nouveau mot de passe</p>
-<input class="input" type="password" name="repeatnewpassword"><br/><br/>
-<input class="input" type="submit" value="Changer de mot de passe" name="submit"</input><br/>
-</form>
-	';
 }
 else
 {
@@ -53,14 +40,31 @@ else
 <!DOCTYPE html>
 <html>
 <head>
+	<meta charset="utf-8">
 	<title>Changement de login</title>
+	<link rel="stylesheet" href="css/changement_mdp.css" type="text/css">
 </head>
 <body>
 	<!-- Header -->
-			<header id="header">
+			<header>
 			</header>
+	<!-- Main -->
+	<main>
+		<fieldset>
+			<legend>Changement du mot de passe</legend>
+			<form method="POST" action="changement_mdp.php">
+				<p>Votre ancien mot de passe</p>
+				<input type="password" name="password">
+				<p>Votre nouveau mot de passe</p>
+				<input type="password" name="newpassword">
+				<p>Répétez votre nouveau mot de passe</p>
+				<input type="password" name="repeatnewpassword">
+				<input type="submit" name="Changer de mot de passe">
+			</form>
+		</fieldset>
+	</main>
 			<!-- Footer -->
-			<footer id="footer">
+			<footer>
 			</footer>
 </body>
 </html>
