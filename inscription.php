@@ -38,10 +38,11 @@ if(isset($_POST['submit']))
 		<meta charset="utf-8">
 		<title>Inscription</title>
 		<link rel="stylesheet" href="css/inscription.css" type="text/css">
+		<link rel="stylesheet" type="text/css" href="css/index2.css">
 	</head>
 	<body class="color">
 		<!-- Header -->
-			
+			<?php include('include/header.php'); ?>
 			<!-- Main -->
 		<main>
 			<h1>Inscription</h1><br/>
