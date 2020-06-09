@@ -11,7 +11,7 @@ if (isset($_POST["deconnexion"])) {
 <!DOCTYPE html>
 <html>
 <head>
-	<title> Réservation-Salles-</title>
+	<title> Réservation Salles</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, user-scalable=yes" />
 	<link href="https://fonts.googleapis.com/css2?family=Mukta&display=swap" rel="stylesheet">
