@@ -10,6 +10,7 @@ if (isset($_POST["deconnexion"])) {
 
 <!DOCTYPE html>
 <html>
+
 <head>
 	<title> Réservation-Salles</title>
 	<meta charset="utf-8">
@@ -18,24 +19,26 @@ if (isset($_POST["deconnexion"])) {
 	<link href="https://fonts.googleapis.com/css2?family=Mukta&display=swap" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="css/index.css">
 </head>
+
 <body>
 	<header>
 		<?php include("include/header.php") ?>
 	</header>
 	<main>
-	<div id="banner">
-		<h2>BIENVENUE<h2>
-		<h4> Trouvez la salle idéal pour vos évènements ! <h4>
-		
-		<form method="post" action="">
-		<input class="recherche" type="search" name="search" placeholder="Nom de l'évènement mariage, anniversaire"> 
-		<input class="recherche" type="search" name="search" placeholder="Où Paris, Marseille">
-		<i class="fas fa-search"></i>
+		<div id="banner">
+			<h2>BIENVENUE<h2>
+					<h4> Trouvez la salle idéal pour vos évènements ! <h4>
+
+							<form method="post" action="">
+								<input class="recherche" type="search" name="search" placeholder="Nom de l'évènement mariage, anniversaire">
+								<input class="recherche" type="search" name="search" placeholder="Où Paris, Marseille">
+								<i class="fas fa-search"></i>
 		</div>
-	</form>
+		</form>
 	</main>
 	<footer>
 		<?php include("include/footer.php") ?>
 	</footer>
 </body>
+
 </html>
