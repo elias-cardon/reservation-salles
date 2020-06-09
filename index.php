@@ -7,7 +7,6 @@ if (isset($_POST["deconnexion"])) {
 	header('Location:index.php');
 }
 ?>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,7 +21,8 @@ if (isset($_POST["deconnexion"])) {
 		<?php include("include/header.php") ?>
 	</header>
 	<main>
-
+	<div id="banner">
+</div>
 	</main>
 	<footer>
 		<?php include("include/footer.php") ?>
