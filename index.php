@@ -7,7 +7,7 @@ if (isset($_POST["deconnexion"])) {
     session_destroy();
     header('Location:index.php');
 }
-
+?>
 <!DOCTYPE html>
 <html>
 <head>
