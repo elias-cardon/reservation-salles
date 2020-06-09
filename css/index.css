@@ -64,8 +64,17 @@ h3 {
     transition: 0.4s;
 }
   
-  .btn:hover {
+.btn:hover {
     color: white;
     box-shadow: 0 0 20px (112, 103, 100, 0.6);
     background-color: rgb(20, 66, 68);
+}
+
+/*****INDEX****/
+
+#banner {
+
+  height: 30%;
+  width: 40%;
+  background-color: cadetblue;
 }
