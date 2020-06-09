@@ -59,7 +59,7 @@ else
 				<input type="password" name="newpassword">
 				<p>Répétez votre nouveau mot de passe</p>
 				<input type="password" name="repeatnewpassword">
-				<input type="submit" name="Changer de mot de passe">
+				<input type="submit" name="submit">
 			</form>
 		</fieldset>
 	</main>
