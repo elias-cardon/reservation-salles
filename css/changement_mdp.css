@@ -1,0 +1,99 @@
+/*MISE EN PAGE*/
+
+*{
+    font-family: monospace;
+}
+html, body{
+    margin: 0;
+    padding: 0;
+}
+
+main{
+    height:100vh;
+}
+
+/*MAIN*/
+
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/*FORMULAIRE*/
+
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--primaryColor);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    font-size: 15px;
+    animation-name: apparition;
+    animation-duration: 1.5s;
+}
+
+label{
+    text-align: center;
+}
+
+form input{
+    margin:10px 0;
+    border-radius: 10px;
+    background-color: var(--secondaryColor);
+    border: none;
+    outline: none;
+    border: 1px solid transparent;
+}
+
+fieldset{
+    animation-name: apparition;
+    animation-duration: 1s;
+    width: 20%;
+    margin: auto;
+    margin-top: 10%;
+}
+
+fieldset legend{
+    font-size: 30px;
+    animation-name: apparition;
+    animation-duration: 1.35s;
+}
+
+.center{
+    text-align: center;
+}
+
+input[type="submit"]{
+    margin: 0;
+    width: 50%;
+    border: 0;
+    cursor: pointer;
+    background-color: var(--secondaryColor);
+    transition:all 0.8s;
+}
+
+input[type="submit"]:hover{
+    box-shadow:300px 0 0 0 greenyellow inset;
+}
+
+/*COULEURS PRINCIPAL*/
+
+:root{
+    --primaryColor:cornflowerblue;
+    --secondaryColor: #eeeeee;
+}
+
+/*APPARITION ANIMATION*/
+
+@keyframes apparition{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 100%;
+    }
+}
