@@ -6,9 +6,6 @@
             <h3>RESERVATION SALLES</h3></a>
         <div class="btn"> Login</div>
         <div class="btn"> Sign up</div>
-        </div>
-    </div>
-</div>
 <?php
 if (isset($_SESSION['login'])){
           echo '<nav>
@@ -19,11 +16,9 @@ if (isset($_SESSION['login'])){
                       <li><a href="index.php?deco">DECONNEXION</a></li>
                     </ul> 
                   </div> 
-                </nav>'; 
+                </nav>';
        
           }
         ?>
-   
-      </nav>
-    </div>
+
 </header>
