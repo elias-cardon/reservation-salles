@@ -4,8 +4,8 @@
         </div>
         <a href="index.php">
             <h3>RESERVATION SALLES</h3></a>
-        <div class="btn"> Login</div>
-        <div class="btn"> Sign up</div>
+        <div class="btn"> Se connecter</div>
+        <div class="btn"> S'inscrire</div>
         </div>
     </div>
 </div>
