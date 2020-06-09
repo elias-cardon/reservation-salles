@@ -50,7 +50,7 @@ h3 {
 
 .btn {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     cursor: pointer;
     font-weight: bold;
     background-color: rgba(179, 186, 189, 1);
