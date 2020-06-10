@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
 <head>
@@ -10,7 +12,9 @@
 </head>
 <body>
     <!--HEADER-->
+    <header>
     <?php include('include/header.php') ?>
+    </header>
 
     <!--MAIN-->
     <main>
@@ -19,14 +23,14 @@
                 <tr>
                     <th></th>
                     <th>Lundi</th>
-
+                    
                     <th>Mardi</th>
 
                     <th>Mercredi</th>
 
                     <th>Jeudi</th>
 
-                    <th>Vendredidi</th>
+                    <th>Vendredi</th>
 
                     <th>Samedi</th>
 
