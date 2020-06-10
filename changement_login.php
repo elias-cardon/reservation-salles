@@ -30,6 +30,18 @@ if (isset($_SESSION['login'])) {
 			echo "Veuillez saisir tous les champs";
 		}
 	}
+
+
+echo '<form method="POST" action="changement_login.php">
+<p>Votre ancien login</p>
+<input class="input" type="text" name="login"<br/>
+<p>Votre nouveau login</p>
+<input class="input" type="text" name="newlogin">
+<p>Répétez votre nouveau login</p>
+<input class="input" type="text" name="repeatnewlogin"><br/><br/>
+<input class="input" type="submit" value="Changer de login" name="submit"</input>
+</form>
+	';
 }
 else
 {
@@ -40,29 +52,16 @@ else
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
 	<title>Changement de login</title>
-	<link rel="stylesheet" href="css/index2.css" type="text/css">
-	<link rel="stylesheet" href="css/changement_login.css" type="text/css">
 </head>
 <body>
-	<header>
-		<?php include("include/header.php") ?>
-	</header>
-	<main>
-		<fieldset>
-			<legend>Changement du mot de passe</legend>
-			<form method="POST" action="changement_login.php">
-				<p>Votre ancien login</p>
-				<input type="text" name="login">
-				<p>Votre nouveau login</p>
-				<input type="text" name="newlogin">
-				<p>Répétez votre nouveau login</p>
-				<input type="text" name="repeatnewlogin">
-				<input type="submit" value="Changer de login" name="submit">
-			</form>
-		</fieldset>
-		
-	</main>
+	<!-- Header -->
+			<header>
+
+			</header>
+			<!-- Footer -->
+			<footer id="footer">
+
+			</footer>
 </body>
 </html>

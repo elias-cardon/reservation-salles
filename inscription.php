@@ -33,20 +33,19 @@ if(isset($_POST['submit']))
 
 
 <!DOCTYPE html>
-<html lang="fr" dir="ltr">
+<html>
 	<head>
 		<meta charset="utf-8">
 		<title>Inscription</title>
-		<link rel="stylesheet" href="css/inscription.css" type="text/css">
-		<link rel="stylesheet" type="text/css" href="css/index2.css">
 	</head>
 	<body class="color">
 		<!-- Header -->
-			<?php include('include/header.php'); ?>
+			<header id="header">
+				<nav><a href="index.php">Accueil</a> | <a href="connexion.php">Connexion</a></nav>
+			</header>
 			<!-- Main -->
 		<main>
 			<h1>Inscription</h1><br/>
-			<fieldset>
 				<form method="post" action="inscription.php">
         			<p>Login</p>
         			<input class="input" type="text" name="login">
@@ -56,7 +55,6 @@ if(isset($_POST['submit']))
         			<input class="input" type="password" name="repeatpassword"><br><br>
         			<input class="input" type="submit" name="submit" value="Valider">
 				</form>
-			</fieldset>
 		</main>
 		<!-- Footer -->
 			<footer id="footer">
