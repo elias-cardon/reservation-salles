@@ -29,11 +29,11 @@ if (isset($_POST["deconnexion"])) {
 			<h2>BIENVENUE<h2>
 					<h4> Trouvez la salle idéal pour vos évènements ! <h4>
 
-							<form method="post" action="">
-								<input class="recherche" type="search" name="search" placeholder="Nom de l'évènement mariage, anniversaire">
-								<input class="recherche" type="search" name="search" placeholder="Où Paris, Marseille">
-								<i class="fas fa-search"></i>
-		</div>
+						<form method="post" action="">
+							<input class="recherche" type="search" name="search" placeholder="Nom de l'évènement mariage, anniversaire">
+							<input class="recherche" type="search" name="search" placeholder="Où Paris, Marseille">
+							<i class="fas fa-search"></i>
+			</div>
 		</form>
 	</main>
 	<footer>
