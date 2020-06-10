@@ -78,7 +78,7 @@ input[type="submit"]:hover{
 /*COULEURS PRINCIPAL*/
 
 :root{
-    --primaryColor:cornflowerblue;
+    --primaryColor:rgb(245, 140, 222);
     --secondaryColor: #eeeeee;
 }
 

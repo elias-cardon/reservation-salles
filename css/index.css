@@ -54,6 +54,7 @@ h3 {
     color: white;
     cursor: pointer;
     font-weight: bold;
+    margin: 7px;
     background-color: rgba(179, 186, 189, 1);
     border-radius: 4px;
     width: 100px;
