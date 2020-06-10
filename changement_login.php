@@ -32,15 +32,7 @@ if (isset($_SESSION['login'])) {
 	}
 
 
-echo '<form method="POST" action="changement_login.php">
-<p>Votre ancien login</p>
-<input class="input" type="text" name="login"<br/>
-<p>Votre nouveau login</p>
-<input class="input" type="text" name="newlogin">
-<p>Répétez votre nouveau login</p>
-<input class="input" type="text" name="repeatnewlogin"><br/><br/>
-<input class="input" type="submit" value="Changer de login" name="submit"</input>
-</form>
+echo '
 	';
 }
 else
@@ -53,15 +45,30 @@ else
 <html>
 <head>
 	<title>Changement de login</title>
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+	<link rel="stylesheet" type="text/css" href="css/changement_login.css">
 </head>
 <body>
 	<!-- Header -->
 			<header>
-
+				<?php include("include/header.php") ?>
 			</header>
-			<!-- Footer -->
-			<footer id="footer">
 
+			<!-- Main -->
+			<main>
+				<form method="POST" action="changement_login.php">
+					<p>Votre ancien login</p>
+					<input class="input" type="text" name="login"></input>
+					<p>Votre nouveau login</p>
+					<input class="input" type="text" name="newlogin">
+					<p>Répétez votre nouveau login</p>
+					<input class="input" type="text" name="repeatnewlogin"></input>
+					<input class="input" type="submit" value="Changer de login" name="submit"></input>
+				</form>
+			</main>
+			<!-- Footer -->
+			<footer>
+				
 			</footer>
 </body>
 </html>

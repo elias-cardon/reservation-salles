@@ -59,7 +59,8 @@ if(isset($_POST['submit']))
 				</form>
 		</main>
 		<!-- Footer -->
-			<footer id="footer">
+			<footer>
+				<?php include("include/footer.php") ?>
 			</footer>
 	</body> 
 </html>

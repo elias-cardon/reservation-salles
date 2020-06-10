@@ -1,32 +1,46 @@
-<?php
-session_start();
-if ($_SESSION['login']) {
-	echo "<p>Bienvenue ".$_SESSION['login']. " ! <br/><br/>
+<?php session_start();
 
-	<a href='changement_mdp.php'>Changer de mot de passe</a><br/>
-
-	<a href='changement_login.php'>Changer de login</a><br/>
-	<a href='logout.php'>Se déconnecter</a></p>";
-}
-else
-{
-	header("Location:connexion.php");
+if (isset($_POST["deconnexion"])) {
+	session_unset();
+	session_destroy();
+	header('Location:index.php');
 }
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>
+	<meta charset="utf-8">
 	<title>Profil</title>
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+	<link rel="stylesheet" type="text/css" href="css/profil.css">
 </head>
 <body>
 	<!-- Header -->
 			<header id="header">
-				<ul id="lien">
-					<li><a href="index.php">Accueil</a></li>
-				</ul>
+				<?php include("include/header.php") ?>
 			</header>
+			<!-- Main -->
+			<main id="milieu">
+				<?php
+				if ($_SESSION['login']) {
+					echo "<p>Bienvenue ".$_SESSION['login']. " ! <br/><br/>
+
+					<a href='changement_mdp.php'>Changer de mot de passe</a><br/>
+
+					<a href='changement_login.php'>Changer de login</a><br/>
+
+					<a href='logout.php'>Se déconnecter</a></p>";
+				}
+				else
+				{
+					header("Location:connexion.php");
+				}
+				?>
+			</main>
 			<!-- Footer -->
-			<footer id="footer">
+			<footer>
+				<?php include("include/footer.php") ?>
 			</footer>
 </body>
 </html>

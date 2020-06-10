@@ -52,6 +52,7 @@ if (isset($_POST['submit'])) {
 		</main>
 		<!-- Footer -->
 			<footer>
+				<?php include("include/footer.php") ?>
 			</footer>
 	</body> 
 </html>

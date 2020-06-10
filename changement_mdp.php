@@ -1,5 +1,13 @@
+<?php session_start();
+
+if (isset($_POST["deconnexion"])) {
+	session_unset();
+	session_destroy();
+	header('Location:index.php');
+}
+?>
+
 <?php
-session_start();
 if (isset($_SESSION['login'])) {
 	$username = $_SESSION['login'];
 	if (isset($_POST['submit'])) {
@@ -33,15 +41,7 @@ if (isset($_SESSION['login'])) {
 
 
 
-echo '<form method="POST" action="changement.php">
-<p>Votre ancien mot de passe</p>
-<input class="input" type="password" name="password"<br/>
-<p>Votre nouveau mot de passe</p>
-<input class="input" type="password" name="newpassword">
-<p>Répétez votre nouveau mot de passe</p>
-<input class="input" type="password" name="repeatnewpassword"><br/><br/>
-<input class="input" type="submit" value="Changer de mot de passe" name="submit"</input><br/>
-</form>
+echo '
 	';
 }
 else
@@ -54,13 +54,28 @@ else
 <html>
 <head>
 	<title>Changement de login</title>
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+	<link rel="stylesheet" type="text/css" href="css/changement_mdp.css">
 </head>
 <body>
 	<!-- Header -->
-			<header id="header">
+			<header>
+				<?php include("include/header.php") ?>
 			</header>
+			<!-- Main -->
+			<main>
+				<form method="POST" action="changement_mdp.php">
+					<p>Votre ancien mot de passe</p>
+					<input class="input" type="password" name="password"></input>
+					<p>Votre nouveau mot de passe</p>
+					<input class="input" type="password" name="newpassword"></input>
+					<p>Répétez votre nouveau mot de passe</p>
+					<input class="input" type="password" name="repeatnewpassword"></input>
+					<input class="input" type="submit" value="Submit" name="submit"></input>
+				</form>
+			</main>
 			<!-- Footer -->
-			<footer id="footer">
+			<footer>
 			</footer>
 </body>
 </html>
