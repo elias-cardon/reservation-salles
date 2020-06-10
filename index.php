@@ -26,18 +26,19 @@ if (isset($_POST["deconnexion"])) {
 </header>
 <main>
     <div id="banner">
-        <h2>BIENVENUE
-            <h2>
-                <h4> Trouvez la salle idéal pour vos évènements !
-                    <h4>
+        <h2>BIENVENUE</h2>
 
-                        <form method="post" action="">
-                            <input class="recherche" type="search" name="search"
-                                   placeholder="Nom de l'évènement mariage, anniversaire">
-                            <input class="recherche" type="search" name="search" placeholder="Où Paris, Marseille">
-                            <i class="fas fa-search"></i>
+        <h4> Trouvez la salle idéal pour vos évènements !</h4>
+
+
+        <form method="post" action="">
+            <input class="recherche" type="search" name="search"
+                   placeholder="Nom de l'évènement mariage, anniversaire">
+            <input class="recherche" type="search" name="search" placeholder="Où Paris, Marseille">
+            <i class="fas fa-search"></i>
+        </form>
     </div>
-    </form>
+
 </main>
 <footer>
     <?php include("include/footer.php") ?>
