@@ -31,11 +31,13 @@ if (isset($_POST['submit'])) {
 	<head>
 		<meta charset="utf-8">
 		<title>Connexion</title>
+		<link rel="stylesheet" type="text/css" href="css/connexion.css">
+		<link rel="stylesheet" type="text/css" href="css/index.css">
 	</head>
 	<body class="color">
 		<!-- Header -->
 			<header id="header">
-				<nav><a href="index.php">Accueil</a> | <a href="inscription.php">Inscription</a></nav>
+				<?php include("include/header.php") ?>
 			</header>
 			<!-- Main -->
 		<main>
