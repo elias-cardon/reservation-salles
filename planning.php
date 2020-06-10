@@ -1,4 +1,11 @@
+<?php session_start();
 
+if (isset($_POST["deconnexion"])) {
+    session_unset();
+    session_destroy();
+    header('Location:index.php');
+}
+?>
 
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
@@ -13,8 +20,9 @@
 <body>
     <!--HEADER-->
     <header>
-    <?php include('include/header.php') ?>
+        <?php include('include/header.php') ?>
     </header>
+    
 
     <!--MAIN-->
     <main>
@@ -23,7 +31,6 @@
                 <tr>
                     <th></th>
                     <th>Lundi</th>
-                    
                     <th>Mardi</th>
 
                     <th>Mercredi</th>

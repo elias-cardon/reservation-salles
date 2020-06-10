@@ -58,9 +58,5 @@ if(isset($_POST['submit']))
         			<input class="input" type="submit" name="submit" value="Valider">
 				</form>
 		</main>
-		<!-- Footer -->
-			<footer>
-				<?php include("include/footer.php") ?>
-			</footer>
 	</body> 
 </html>
