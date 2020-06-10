@@ -1,9 +1,8 @@
 <header>
     <nav id="nav-index">
         <div id="top-title">
+          <a href="index.php"><h3>RESERVATION SALLES</h3></a>
         </div>
-        <a href="index.php">
-            <h3>RESERVATION SALLES</h3></a>
         <div class="btn"><a href="connexion.php">Se connecter</a></div>
         <div class="btn"><a href="inscription.php">S'inscrire</a></div>
 <?php

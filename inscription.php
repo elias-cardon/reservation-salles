@@ -37,11 +37,13 @@ if(isset($_POST['submit']))
 	<head>
 		<meta charset="utf-8">
 		<title>Inscription</title>
+		<link rel="stylesheet" type="text/css" href="css/index.css">
+		<link rel="stylesheet" type="text/css" href="css/inscription.css">
 	</head>
 	<body class="color">
 		<!-- Header -->
 			<header id="header">
-				<nav><a href="index.php">Accueil</a> | <a href="connexion.php">Connexion</a></nav>
+				<?php include("include/header.php") ?>
 			</header>
 			<!-- Main -->
 		<main>
