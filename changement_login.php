@@ -66,9 +66,5 @@ else
 					<input class="input" type="submit" value="Changer de login" name="submit"></input>
 				</form>
 			</main>
-			<!-- Footer -->
-			<footer>
-				
-			</footer>
 </body>
 </html>

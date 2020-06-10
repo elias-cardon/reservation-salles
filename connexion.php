@@ -33,6 +33,7 @@ if (isset($_POST['submit'])) {
 		<title>Connexion</title>
 		<link rel="stylesheet" type="text/css" href="css/connexion.css">
 		<link rel="stylesheet" type="text/css" href="css/index.css">
+		<script src="https://kit.fontawesome.com/5a25ce672a.js" crossorigin="anonymous"></script>
 	</head>
 	<body class="color">
 		<!-- Header -->
@@ -50,9 +51,5 @@ if (isset($_POST['submit'])) {
         			<input class="input" type="submit" name="submit" value="Valider"><br/>
 				</form>
 		</main>
-		<!-- Footer -->
-			<footer>
-				<?php include("include/footer.php") ?>
-			</footer>
 	</body> 
 </html>

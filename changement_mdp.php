@@ -56,6 +56,7 @@ else
 	<title>Changement de login</title>
 	<link rel="stylesheet" type="text/css" href="css/index.css">
 	<link rel="stylesheet" type="text/css" href="css/changement_mdp.css">
+	<script src="https://kit.fontawesome.com/5a25ce672a.js" crossorigin="anonymous"></script>
 </head>
 <body>
 	<!-- Header -->
@@ -74,8 +75,5 @@ else
 					<input class="input" type="submit" value="Submit" name="submit"></input>
 				</form>
 			</main>
-			<!-- Footer -->
-			<footer>
-			</footer>
 </body>
 </html>
