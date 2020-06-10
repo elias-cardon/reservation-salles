@@ -32,7 +32,7 @@ if (isset($_POST['submit'])) {
 		<meta charset="utf-8">
 		<title>Connexion</title>
 		<link rel="stylesheet" href="css/connexion.css" type="text/css">
-		<link rel="stylesheet" type="text/css" href="css/index.css">
+		<link rel="stylesheet" type="text/css" href="css/index2.css">
 	</head>
 	<body class="color">
 		<!-- Header -->

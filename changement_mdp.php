@@ -42,12 +42,14 @@ else
 <head>
 	<meta charset="utf-8">
 	<title>Changement de login</title>
+	<link rel="stylesheet" href="css/index.css" type="text/css">
 	<link rel="stylesheet" href="css/changement_mdp.css" type="text/css">
 </head>
 <body>
 	<!-- Header -->
-			<header>
-			</header>
+	<header>
+		<?php include("include/header.php") ?>
+	</header>
 	<!-- Main -->
 	<main>
 		<fieldset>

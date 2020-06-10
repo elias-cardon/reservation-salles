@@ -14,7 +14,7 @@ if (isset($_POST["deconnexion"])) {
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, user-scalable=yes" />
 	<link href="https://fonts.googleapis.com/css2?family=Mukta&display=swap" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="css/index.css">
+	<link rel="stylesheet" type="text/css" href="css/index2.css">
 </head>
 <body>
 	<header>
