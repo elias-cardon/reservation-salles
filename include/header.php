@@ -13,7 +13,7 @@ if (isset($_SESSION['login'])){
                 <li><a href="reservation.php">RESERVATION</a></li>
                       <li><a href="planning.php">PLANNING</a></li>
                       <li><a href="profil.php">PROFIL</a></li>
-                      <li><a href="index.php?deco">DECONNEXION</a></li>
+                      <li><a href="logout.php">DECONNEXION</a></li>
                     </ul> 
                   </div> 
                 </nav>';
