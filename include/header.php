@@ -4,8 +4,8 @@
         </div>
         <a href="index.php">
             <h3>RESERVATION SALLES</h3></a>
-        <div class="btn"> Login</div>
-        <div class="btn"> Sign up</div>
+        <div class="btn"><a href="connexion.php">Se connecter</a></div>
+        <div class="btn"><a href="inscription.php">S'inscrire</a></div>
 <?php
 if (isset($_SESSION['login'])){
           echo '<nav>
