@@ -1,4 +1,5 @@
-<?php session_start();
+<?php
+session_start();
 
 if (isset($_POST["deconnexion"])) {
     session_unset();
@@ -6,6 +7,8 @@ if (isset($_POST["deconnexion"])) {
     header('Location:index.php');
 }
 ?>
+
+
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
 <head>
@@ -26,6 +29,9 @@ if (isset($_POST["deconnexion"])) {
 <div class="center-body">
     <form action="#" method="post">
 
+        <?php if (isset($erreur)) {
+            echo '<div class="error alert">' . $erreur . "</div>" . "<br />";
+        } ?>
 
         <label for="titre">Titre:</label><br/>
         <input type="text" name="titre"><br/>
@@ -40,7 +46,6 @@ if (isset($_POST["deconnexion"])) {
 
         <input type="submit" name="submit" value="Réserver">
     </form>
-
 </div>
 
 </body>
