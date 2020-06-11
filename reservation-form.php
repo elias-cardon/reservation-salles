@@ -1,10 +1,17 @@
-<?php
+<?php session_start();
+
+if (isset($_POST["deconnexion"])) {
+    session_unset();
+    session_destroy();
+    header('Location:index.php');
+}
 ?>
 
 <!DOCTYPE html>
 <html>
 <head>
     <title>Réservation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Mukta&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/index.css">
     <link rel="stylesheet" type="text/css" href="css/reservation-form.css">
 </head>
