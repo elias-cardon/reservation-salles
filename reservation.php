@@ -13,7 +13,7 @@ $requete1 = "SELECT titre, description, FROM reservations";
 $query1 = mysqli_query($bdd,$requete1);
 $reserv = mysqli_fetch_all($query1);
 
-
+$requete2 = "";
 
 } 
 
