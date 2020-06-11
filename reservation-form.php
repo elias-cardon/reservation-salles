@@ -28,11 +28,6 @@ if (isset($_POST["deconnexion"])) {
 <!--Main-->
 <div class="center-body">
     <form action="#" method="post">
-
-        <?php if (isset($erreur)) {
-            echo '<div class="error alert">' . $erreur . "</div>" . "<br />";
-        } ?>
-
         <label for="titre">Titre:</label><br/>
         <input type="text" name="titre"><br/>
         <label for="description">Description:</label><br/>
