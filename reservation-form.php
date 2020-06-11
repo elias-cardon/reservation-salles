@@ -1,44 +1,82 @@
-<?php session_start();
+<?php
+session_start();
 
-if (isset($_POST["deconnexion"])) {
-    session_unset();
-    session_destroy();
-    header('Location:index.php');
+
+
+//Verifier si le formulaire est bien envoyer et remplie
+
+if (isset($_POST['submit'])) {
+
+    //Variables
+    $titre = htmlspecialchars($_POST['titre']);
+    $description = htmlspecialchars($_POST['description']);
+    $debut = htmlspecialchars($_POST['debut']);
+    $fin = htmlspecialchars($_POST['fin']);
+    $erreur = null;
+    $secureErreur = htmlspecialchars($erreur);
+
+    if (!empty($titre) && !empty($description) && !empty($debut) && !empty($fin)) {
+
+        try {
+            $config = new PDO('mysql:host=localhost;dbname=reservationsalles;charset=utf8', 'root', '');
+            $req = $config->prepare('INSERT INTO reservations(titre, description, debut, fin)
+                                     VALUES(:titre, :description, :debut, :fin)');
+            $data = ['titre' => $titre,
+                     'description' => $description,
+                     'debut' => $debut,
+                     'fin' => $fin ];
+
+            $req->execute($data);
+            
+        }catch(PDOexception $e){
+            $erreur = "Erreur: ".$e->getMessage();
+        }
+
+    } else {
+        $erreur = "Veuillez remplir tous les champs.";
+    }
 }
+
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="fr" dir="ltr">
 <head>
-    <title>Réservation</title>
-    <link href="https://fonts.googleapis.com/css2?family=Mukta&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="css/index.css">
-    <link rel="stylesheet" type="text/css" href="css/reservation-form.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservation</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/reservation-form.css">
 </head>
 <body>
-<!-- Header -->
-<header>
-    <?php include("include/header.php") ?>
-</header>
 
-<!-- Main -->
-<main>
-    <form method="POST" action="planning.php">
-        <label for="name">Titre</label><br>
-        <input type="text" id="name" name="name" required
-               minlength="4" maxlength="140" size="10"><br>
-        <label for="descrip">Description</label><br>
-        <input type="text" id="name" name="name" required
-               minlength="4" maxlength="255" size="10"><br>
-        <label>Horaire début :</label>
-        <input type="date" name="datedeb" required>
-        <input type="time" name="timedeb" value="08:00" step="3600" min="08:00" max="18:00"
-               required><br>
-        <label>Horaire fin :</label>
-        <input type="date" name="datefin" required>
-        <input type="time" name="timefin" value="09:00" step="3600" min="09:00" max="19:00"
-               required><br>
-        <input class="input" type="submit" name="submit" value="Valider">
+    <!--Header-->
+    <header>
+    <?php include('include/header.php');?>
+    </header>
+
+     <!--Main-->
+     <div class="center-body">
+    <form action="#" method="post">
+
+    <?php if(isset($erreur)){
+        echo '<div class="error alert">'.$erreur."</div>"."<br />";
+    }?>
+
+    <label for="titre">Titre:</label><br />
+        <input type="text" name="titre"><br />
+    <label for="description">Description:</label><br />
+        <textarea id="description" name="description" ></textarea><br />
+    <label for="debut">Début:</label><br />
+        <input type="date" name="debut"><br />
+    <label for="fin">Fin:</label><br />
+        <input type="date" name="fin"><br /><br />
+    <label for="heure">Heure:</label><br />
+        <input type="time" name="heure"><br /><br />
+
+    <input type="submit" name="submit" value="Réserver">
     </form>
-</main>
+    </div>
+    
 </body>
+</html>
