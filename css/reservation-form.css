@@ -7,10 +7,10 @@ html, body{
    
 }
 .center-body{
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 main{
@@ -41,7 +41,12 @@ form{
     animation-name: apparition;
     animation-duration: 1.5s;
 }
-
+#description{
+    resize: none;
+    width: 100%;
+    border-radius: 10px;
+    margin: auto;
+}
 label{
     text-align: center;
 }

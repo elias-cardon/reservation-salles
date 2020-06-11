@@ -66,11 +66,13 @@ if (isset($_POST['submit'])) {
     <label for="titre">Titre:</label><br />
         <input type="text" name="titre"><br />
     <label for="description">Description:</label><br />
-        <textarea name="description" cols="30" rows="10"></textarea><br />
+        <textarea id="description" name="description" ></textarea><br />
     <label for="debut">Début:</label><br />
         <input type="date" name="debut"><br />
     <label for="fin">Fin:</label><br />
         <input type="date" name="fin"><br /><br />
+    <label for="heure">Heure:</label><br />
+        <input type="time" name="heure"><br /><br />
 
     <input type="submit" name="submit" value="Réserver">
     </form>
