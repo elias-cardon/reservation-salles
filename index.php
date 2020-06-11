@@ -32,8 +32,7 @@ if (isset($_POST["deconnexion"])) {
 
 
         <form method="post" action="">
-            <input class="recherche" type="search" name="search"
-                   placeholder="Nom de l'évènement mariage, anniversaire">
+            <input class="recherche" type="search" name="search" placeholder="Nom de l'évènement mariage, anniversaire">
             <input class="recherche" type="search" name="search" placeholder="Où Paris, Marseille">
             <i class="fas fa-search"></i>
         </form>
