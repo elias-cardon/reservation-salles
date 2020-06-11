@@ -2,7 +2,6 @@
 session_start();
 
 
-
 //Verifier si le formulaire est bien envoyer et remplie
 
 if (isset($_POST['submit'])) {
@@ -10,24 +9,25 @@ if (isset($_POST['submit'])) {
     //Variables
     $titre = htmlspecialchars($_POST['titre']);
     $description = htmlspecialchars($_POST['description']);
-    $debut = htmlspecialchars($_POST['debut']);
-    $fin = htmlspecialchars($_POST['fin']);
+    $debut = date_create(htmlspecialchars($_POST['debut']));
+    $date_debut = date_format($debut, 'Y-m-d');
+    $fin = date_create(htmlspecialchars($_POST['fin']));
+    $date_fin = date_format($fin, 'Y-m-d');
+    $heure = date_create(htmlspecialchars($_POST['heure']));
+    $date_heure = date_format($heure, 'H:i:s');
+    $id_utilisateur = null;
     $erreur = null;
     $secureErreur = htmlspecialchars($erreur);
 
+
     if (!empty($titre) && !empty($description) && !empty($debut) && !empty($fin)) {
 
+        //Se co à la bdd, préparer la requête d'insertion et l'executer
         try {
             $config = new PDO('mysql:host=localhost;dbname=reservationsalles;charset=utf8', 'root', '');
-            $req = $config->prepare('INSERT INTO reservations(titre, description, debut, fin)
-                                     VALUES(:titre, :description, :debut, :fin)');
-            $data = ['titre' => $titre,
-                     'description' => $description,
-                     'debut' => $debut,
-                     'fin' => $fin ];
-
-            $req->execute($data);
-            
+            $req = $config->query('INSERT INTO reservations(titre, description, debut, fin,id_utilisateur)
+                                     VALUES($titre, $description, $date_debut, $date_fin, $id_utilisateur++)');
+            $erreur = "Vous êtes bien ici";
         }catch(PDOexception $e){
             $erreur = "Erreur: ".$e->getMessage();
         }
