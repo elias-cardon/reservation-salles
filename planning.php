@@ -22,7 +22,7 @@ if (isset($_POST["deconnexion"])) {
     <header>
         <?php include('include/header.php') ?>
     </header>
-    
+
 
     <!--MAIN-->
     <main>
@@ -168,10 +168,10 @@ if (isset($_POST["deconnexion"])) {
 
             </tbody>
 
-    
-    
+
+
         </table>
     </main>
-    
+
 </body>
 </html>

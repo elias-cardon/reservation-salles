@@ -1,44 +1,11 @@
-<?php
-session_start();
+<?php session_start();
 
-
-
-//Verifier si le formulaire est bien envoyer et remplie
-
-if (isset($_POST['submit'])) {
-
-    //Variables
-    $titre = htmlspecialchars($_POST['titre']);
-    $description = htmlspecialchars($_POST['description']);
-    $debut = htmlspecialchars($_POST['debut']);
-    $fin = htmlspecialchars($_POST['fin']);
-    $erreur = null;
-    $secureErreur = htmlspecialchars($erreur);
-
-    if (!empty($titre) && !empty($description) && !empty($debut) && !empty($fin)) {
-
-        try {
-            $config = new PDO('mysql:host=localhost;dbname=reservationsalles;charset=utf8', 'root', '');
-            $req = $config->prepare('INSERT INTO reservations(titre, description, debut, fin)
-                                     VALUES(:titre, :description, :debut, :fin)');
-            $data = ['titre' => $titre,
-                     'description' => $description,
-                     'debut' => $debut,
-                     'fin' => $fin ];
-
-            $req->execute($data);
-            
-        }catch(PDOexception $e){
-            $erreur = "Erreur: ".$e->getMessage();
-        }
-
-    } else {
-        $erreur = "Veuillez remplir tous les champs.";
-    }
+if (isset($_POST["deconnexion"])) {
+    session_unset();
+    session_destroy();
+    header('Location:index.php');
 }
-
 ?>
-
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
 <head>
@@ -50,33 +17,31 @@ if (isset($_POST['submit'])) {
 </head>
 <body>
 
-    <!--Header-->
-    <header>
-    <?php include('include/header.php');?>
-    </header>
+<!--Header-->
+<header>
+    <?php include('include/header.php'); ?>
+</header>
 
-     <!--Main-->
-     <div class="center-body">
+<!--Main-->
+<div class="center-body">
     <form action="#" method="post">
 
-    <?php if(isset($erreur)){
-        echo '<div class="error alert">'.$erreur."</div>"."<br />";
-    }?>
 
-    <label for="titre">Titre:</label><br />
-        <input type="text" name="titre"><br />
-    <label for="description">Description:</label><br />
-        <textarea id="description" name="description" ></textarea><br />
-    <label for="debut">Début:</label><br />
-        <input type="date" name="debut"><br />
-    <label for="fin">Fin:</label><br />
-        <input type="date" name="fin"><br /><br />
-    <label for="heure">Heure:</label><br />
-        <input type="time" name="heure"><br /><br />
+        <label for="titre">Titre:</label><br/>
+        <input type="text" name="titre"><br/>
+        <label for="description">Description:</label><br/>
+        <textarea id="description" name="description"></textarea><br/>
+        <label for="debut">Début:</label><br/>
+        <input type="date" name="debut"><br/>
+        <label for="fin">Fin:</label><br/>
+        <input type="date" name="fin"><br/><br/>
+        <label for="heure">Heure:</label><br/>
+        <input type="time" name="heure"><br/><br/>
 
-    <input type="submit" name="submit" value="Réserver">
+        <input type="submit" name="submit" value="Réserver">
     </form>
-    </div>
-    
+
+</div>
+
 </body>
 </html>
