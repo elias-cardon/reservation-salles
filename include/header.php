@@ -14,7 +14,7 @@
 if (isset($_SESSION['login'])) {
     ?>
     <ul class="menu-nav">
-        <li class="btn"><a href="reservation.php">RESERVATION</a></li>
+        <li class="btn"><a href="reservation-form.php">RESERVATION</a></li>
         <li class="btn"><a href="planning.php">PLANNING</a></li>
         <li class="btn"><a href="profil.php">PROFIL</a></li>
         <li class="btn"><a href="logout.php">DECONNEXION</a></li>

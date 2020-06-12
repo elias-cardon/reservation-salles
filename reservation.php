@@ -1,13 +1,19 @@
-<?php
-session_start();
-//Connection à la bdd
-try {
-    $config = new PDO('mysql:host=localhost;dbname=reservationsalles;charset=utf8', 'root', '');
-    $req = $config->query('SELECT u.login, r.titre, r.description, r.debut, r.fin 
-                           FROM reservations AS r
-                           INNER JOIN utilisateurs AS u
-                           ON r.id_utilisateur = u.id');
-}catch(PDOexception $e){
-    $erreur = "Erreur: ".$e->getMessage();
-}
+<?php session_start();
+$bdd = mysqli_connect("localhost", "root", "", 'reservationsalles');
+
+if (isset($_GET['submit'])) {
+
+$login = $_GET['login'];
+$requete = "SELECT id FROM utilisateurs WHERE login ='".$_SESSION['login']."'";
+$query = mysqli_query($bdd, $requete);
+$id = mysqli_fetch_all($query);
+
+
+$requete1 = "SELECT titre, description, FROM reservations";
+$query1 = mysqli_query($bdd,$requete1);
+$reserv = mysqli_fetch_all($query1);
+
+$requete2 = "";
+
+} 
 
