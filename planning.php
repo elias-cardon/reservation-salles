@@ -101,7 +101,7 @@ if (isset($_POST["deconnexion"])) {
                     <td></td>
                     <td></td>
                     <td></td>
-                    <td><a href="reservation.php">RESERVER</a></td>
+                    <td></td>
                     <td></td>
                     <td></td>
                 </tr>
