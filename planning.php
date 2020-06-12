@@ -65,6 +65,10 @@ $result = mysqli_fetch_all($query);
                         echo $value[7]. ' ' . $value[1];
                         echo "<br/><button><a href='reservation.php'>Voir</a></button>";
                     }
+                    elseif ($heure != $ligne && $jour != $colonnes)
+                    {
+                        echo "<a href='reservation-form.php'>Réservation</a>";
+                    }
                 }
                 echo "</td>";
             }
