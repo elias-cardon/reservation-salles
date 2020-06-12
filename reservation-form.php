@@ -43,7 +43,7 @@ if (isset($_POST['submit'])) {
 
 <!--Main-->
 <div class="center-body">
-    <form action="#" method="post">
+    <form action="planning.php" method="post">
 
         <label for="titre">Titre:</label><br/>
         <input type="text" name="titre"><br/>
