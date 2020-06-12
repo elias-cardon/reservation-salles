@@ -5,6 +5,8 @@ if (isset($_POST["deconnexion"])) {
     session_destroy();
     header('Location:index.php');
 }
+
+
 ?>
 
 <!DOCTYPE html>
@@ -18,18 +20,61 @@ if (isset($_POST["deconnexion"])) {
 
 </head>
 <body>
-    <!--HEADER-->
-    <header>
-        <?php include('include/header.php') ?>
-    </header>
-    
+<!--HEADER-->
+<header>
+    <?php include('include/header.php') ?>
+</header>
+<?php
+$db = mysqli_connect("localhost", "root", "", "reservationsalles");
+$date = "SELECT * FROM reservations";
+$query = mysqli_query($db, $date);
+$result = mysqli_fetch_all($query);
 
-    <!--MAIN-->
-    <?php
-    
-    ?>
+?>
 
-    </main>
-    
+<!--MAIN-->
+<main>
+    <table>
+        <thead>
+        <tr>
+            <th></th>
+            <th>Lundi</th>
+            <th>Mardi</th>
+
+            <th>Mercredi</th>
+
+            <th>Jeudi</th>
+
+            <th>Vendredi</th>
+
+            <th>Samedi</th>
+
+            <th>Dimanche</th>
+        </tr>
+        </thead>
+        <tbody>
+        <?php
+        for ($ligne = 8; $ligne <= 19; $ligne++) {
+            echo "<tr>";
+            echo "<td>" . $ligne . "</td>";
+
+            for ($colonnes = 1; $colonnes <= 7; $colonnes++) {
+                echo "<td>";
+                foreach ($result as $value) {
+                    $jour = date("w", strtotime($value[3]));
+                    $heure = date("h", strtotime($value[3]));
+                    if ($heure == $ligne && $jour == $colonnes) {
+                        echo "$value[1]";
+                    }
+                }
+                echo "</td>";
+            }
+        }
+        echo "</tr>";
+        ?>
+        </tbody>
+    </table>
+</main>
+
 </body>
 </html>
