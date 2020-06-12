@@ -63,8 +63,7 @@ $result = mysqli_fetch_all($query);
                     $heure = date("H", strtotime($value[3]));
                     if ($heure == $ligne && $jour == $colonnes) {
                         echo $value[7]. ' ' . $value[1];
-
-
+                        echo "<br/><button><a href='reservation.php'>Voir</a></button>";
                     }
                 }
                 echo "</td>";
