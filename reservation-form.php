@@ -17,7 +17,7 @@ if (isset($_POST['submit'])) {
     $id = mysqli_fetch_all($query);
     $id_utilisateur = $id[0][0];
 
-    
+
     $requete2 = "INSERT INTO reservations (titre, description, debut, fin, id_utilisateur) VALUES ('$titre', '$description', '$debut', '$fin', $id_utilisateur)";
     $query1 = mysqli_query($bdd, $requete2);
 
