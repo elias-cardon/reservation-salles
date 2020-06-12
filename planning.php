@@ -2,6 +2,13 @@
 $bdd = mysqli_connect("localhost", "root", "", 'reservationsalles');
 
 
+if (isset($_POST["deconnexion"])) {
+    session_unset();
+    session_destroy();
+    header('Location:index.php');
+}
+
+
 ?>
 
 <!DOCTYPE html>
@@ -15,158 +22,61 @@ $bdd = mysqli_connect("localhost", "root", "", 'reservationsalles');
 
 </head>
 <body>
-    <!--HEADER-->
-    <header>
-        <?php include('include/header.php') ?>
-    </header>
-    
+<!--HEADER-->
+<header>
+    <?php include('include/header.php') ?>
+</header>
+<?php
+$db = mysqli_connect("localhost", "root", "", "reservationsalles");
+$date = "SELECT * FROM reservations";
+$query = mysqli_query($db, $date);
+$result = mysqli_fetch_all($query);
 
-    <!--MAIN-->
-    <main>
-        <table>
-            <thead>
-                <tr>
-                    <th></th>
-                    <th>Lundi</th>
-                    <th>Mardi</th>
+?>
 
-                    <th>Mercredi</th>
+<!--MAIN-->
+<main>
+    <table>
+        <thead>
+        <tr>
+            <th></th>
+            <th>Lundi</th>
+            <th>Mardi</th>
 
-                    <th>Jeudi</th>
+            <th>Mercredi</th>
 
-                    <th>Vendredi</th>
+            <th>Jeudi</th>
 
-                    <th>Samedi</th>
+            <th>Vendredi</th>
 
-                    <th>Dimanche</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <th>8:00</th>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <th>9:00</th>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <th>10:00</th>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <th>11:00</th>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <th>12:00</th>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <th>13:00</th>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td><a href="reservation.php">RESERVER</a></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <th>14:00</th>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <th>15:00</th>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <th>16:00</th>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <th>17:00</th>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <th>18:00</th>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <th>19:00</th>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
+            <th>Samedi</th>
 
-            </tbody>
-    
-        </table>
-    </main>
-    
+            <th>Dimanche</th>
+        </tr>
+        </thead>
+        <tbody>
+        <?php
+        for ($ligne = 8; $ligne <= 19; $ligne++) {
+            echo "<tr>";
+            echo "<td>" . $ligne . "</td>";
+
+            for ($colonnes = 1; $colonnes <= 7; $colonnes++) {
+                echo "<td>";
+                foreach ($result as $value) {
+                    $jour = date("w", strtotime($value[3]));
+                    $heure = date("h", strtotime($value[3]));
+                    if ($heure == $ligne && $jour == $colonnes) {
+                        echo "$value[1]";
+                    }
+                }
+                echo "</td>";
+            }
+        }
+        echo "</tr>";
+        ?>
+        </tbody>
+    </table>
+</main>
+
 </body>
 </html>

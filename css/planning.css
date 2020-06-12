@@ -1,37 +1,39 @@
 /*MISE EN PAGE*/
 
-*{
+* {
     font-family: monospace;
 }
-html, body{
+
+html, body {
     margin: 0;
     padding: 0;
 }
 
-main{
-    height:100vh;
+main {
+    height: 100vh;
 }
 
 /*MAIN*/
 
-main{
+main {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
+
 /*TABLE*/
 
-table, td, th{
+table, td, th {
     border: 1px solid black;
     border-collapse: collapse;
 }
 
-th{
+th {
     padding: 10px;
     border: 1px solid black;
 }
 
-td:hover{
-    box-shadow:300px 0 0 0 greenyellow inset;
+td:hover {
+    box-shadow: 300px 0 0 0 pink inset;
 }

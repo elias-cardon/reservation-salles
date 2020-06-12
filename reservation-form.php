@@ -19,7 +19,6 @@ if (isset($_POST['submit'])) {
 
     $requete2 = "INSERT INTO reservations (titre, description, debut, fin, id_utilisateur) VALUES ('$titre', '$description', '$debut', '$fin', $id_utilisateur)";
     $query1 = mysqli_query($bdd, $requete2);
-    ?> <h1><?=$zitoune?> </h1> <?php 
 
 }
 
