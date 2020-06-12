@@ -1,10 +1,7 @@
 <?php session_start();
+$bdd = mysqli_connect("localhost", "root", "", 'reservationsalles');
 
-if (isset($_POST["deconnexion"])) {
-    session_unset();
-    session_destroy();
-    header('Location:index.php');
-}
+
 ?>
 
 <!DOCTYPE html>
@@ -167,8 +164,6 @@ if (isset($_POST["deconnexion"])) {
                 </tr>
 
             </tbody>
-
-    
     
         </table>
     </main>
