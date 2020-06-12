@@ -54,20 +54,16 @@ $result = mysqli_fetch_all($query);
         </thead>
         <tbody>
         <?php
-        for ($ligne = 8; $ligne<=19; $ligne++)
-        {
+        for ($ligne = 8; $ligne <= 19; $ligne++) {
             echo "<tr>";
-            echo "<td>".$ligne."</td>";
+            echo "<td>" . $ligne . "</td>";
 
-            for ($colonnes = 1; $colonnes <=7; $colonnes++)
-            {
+            for ($colonnes = 1; $colonnes <= 7; $colonnes++) {
                 echo "<td>";
-                foreach ($result as $value)
-                {
+                foreach ($result as $value) {
                     $jour = date("w", strtotime($value[3]));
                     $heure = date("h", strtotime($value[3]));
-                    if ($heure==$ligne && $jour==$colonnes)
-                    {
+                    if ($heure == $ligne && $jour == $colonnes) {
                         echo "$value[1]";
                     }
                 }
