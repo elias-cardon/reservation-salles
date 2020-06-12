@@ -3,14 +3,14 @@ session_start();
 $bdd = mysqli_connect("localhost", "root", "", 'reservationsalles');
 
     if (isset($_POST['submit'])) {
-    
+
     //Variables
     $titre = htmlspecialchars($_POST['titre']);
     $description = htmlspecialchars($_POST['description']);
     $debut = htmlspecialchars($_POST['date-debut']). " ".$_POST['heure-debut'];
     $fin = htmlspecialchars($_POST['date-fin']). " ".$_POST['heure-fin'];
     $date = htmlspecialchars($_POST['date-debut']);
-    
+
 
     $requete = "SELECT id FROM utilisateurs WHERE login ='".$_SESSION['login']."'";
     $query = mysqli_query($bdd, $requete);
@@ -66,6 +66,6 @@ $bdd = mysqli_connect("localhost", "root", "", 'reservationsalles');
     <input type="submit" name="submit" value="Réserver">
     </form>
     </div>
-    
+
 </body>
 </html>
