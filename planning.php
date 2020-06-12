@@ -26,10 +26,9 @@ if (isset($_POST["deconnexion"])) {
 </header>
 <?php
 $db = mysqli_connect("localhost", "root", "", "reservationsalles");
-$date = "SELECT * FROM reservations";
+$date = "SELECT * FROM reservations INNER JOIN utilisateurs ON reservations.id_utilisateur = utilisateurs.id";
 $query = mysqli_query($db, $date);
 $result = mysqli_fetch_all($query);
-
 ?>
 
 <!--MAIN-->
@@ -38,7 +37,9 @@ $result = mysqli_fetch_all($query);
         <thead>
         <tr>
             <th></th>
+
             <th>Lundi</th>
+
             <th>Mardi</th>
 
             <th>Mercredi</th>
@@ -47,9 +48,6 @@ $result = mysqli_fetch_all($query);
 
             <th>Vendredi</th>
 
-            <th>Samedi</th>
-
-            <th>Dimanche</th>
         </tr>
         </thead>
         <tbody>
@@ -58,13 +56,15 @@ $result = mysqli_fetch_all($query);
             echo "<tr>";
             echo "<td>" . $ligne . "</td>";
 
-            for ($colonnes = 1; $colonnes <= 7; $colonnes++) {
+            for ($colonnes = 1; $colonnes <= 5; $colonnes++) {
                 echo "<td>";
                 foreach ($result as $value) {
                     $jour = date("w", strtotime($value[3]));
                     $heure = date("h", strtotime($value[3]));
                     if ($heure == $ligne && $jour == $colonnes) {
-                        echo "$value[1]";
+                        echo $value[7]. ' ' . $value[2];
+
+
                     }
                 }
                 echo "</td>";
