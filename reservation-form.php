@@ -1,6 +1,6 @@
 <?php
 session_start();
-$bdd = mysqli_connect("localhost", "root", "", 'reservationsalles');
+$bdd = new PDO('mysql:host=localhost;dbname=reservationsalles;charset=utf8', 'root', '' );
 
     if (isset($_POST['submit'])) {
     
@@ -9,22 +9,13 @@ $bdd = mysqli_connect("localhost", "root", "", 'reservationsalles');
     $description = htmlspecialchars($_POST['description']);
     $debut = htmlspecialchars($_POST['date-debut']). " ".$_POST['heure-debut'];
     $fin = htmlspecialchars($_POST['date-fin']). " ".$_POST['heure-fin'];
-    $date = htmlspecialchars($_POST['date-debut']);
     
 
-    $requete = "SELECT id FROM utilisateurs WHERE login ='".$_SESSION['login']."'";
-    $query = mysqli_query($bdd, $requete);
-    $id = mysqli_fetch_all($query);
-    $id_utilisateur = $id[0][0];
+    $requete = $bdd->query("SELECT id FROM utilisateurs WHERE login ='".$_SESSION['login']."'");//concatenation no comprendo
+    $id = $requete->fetchAll();
+    $id_utilisateur = $id[0][0]; //c'est comment 
 
-
-    echo $id_utilisateur;
-
-    var_dump($debut);
-    var_dump($fin);
-    $requete2 = "INSERT INTO reservations (titre, description, debut, fin, id_utilisateur) VALUES ('$titre', '$description', '$debut', '$fin', $id_utilisateur)";
-    $query1 = mysqli_query($bdd,$requete2);
-    var_dump($query1);
+    $requete2 = $bdd->query("INSERT INTO reservations (titre, description, debut, fin, id_utilisateur) VALUES ('$titre', '$description', '$debut', '$fin', $id_utilisateur)");
 
 }
 
