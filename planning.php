@@ -62,7 +62,7 @@ $result = mysqli_fetch_all($query);
                     $jour = date("w", strtotime($value[3]));
                     $heure = date("h", strtotime($value[3]));
                     if ($heure == $ligne && $jour == $colonnes) {
-                        echo $value[7]. ' ' . $value[2];
+                        echo $value[7]. ' ' . $value[1];
 
 
                     }
