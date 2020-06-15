@@ -35,36 +35,31 @@ if (isset($_POST['submit'])) {
 
 <body>
 
-<!--Header-->
-<header>
-    <?php include('include/header.php'); ?>
-</header>
+    <!--Header-->
+    <header>
+        <?php include('include/header.php'); ?>
+    </header>
 
-<!--Main-->
-<div class="center-body">
-    <form action="planning.php" method="post">
-        <?php
-            if(isset($erreur)) {
-                echo $erreur;
-            }
-        ?>
+    <!--Main-->
+    <div class="center-body">
+        <form action="#" method="post">
 
-        <label for="titre">Titre:</label><br/>
-        <input type="text" name="titre"><br/>
-        <label for="description">Description:</label><br/>
-        <textarea id="description" name="description"></textarea><br/>
-        <label for="debut">Début:</label><br/>
-        <input type="date" name="date-debut"><br/>
-        <label for="fin">Fin:</label><br/>
-        <input type="date" name="date-fin"><br/><br/>
-        <label for="heure">Heure:</label><br/>
-        <input type="time" name="heure-debut"><br/><br/>
-        <label for="heure">Heure:</label><br/>
-        <input type="time" name="heure-fin"><br/><br/>
+            <label for="titre">Titre:</label><br />
+            <input type="text" name="titre"><br />
+            <label for="description">Description:</label><br />
+            <textarea id="description" name="description"></textarea><br />
+            <label for="debut">Début:</label><br />
+            <input type="date" name="date-debut"><br />
+            <label for="fin">Fin:</label><br />
+            <input type="date" name="date-fin"><br /><br />
+            <label for="heure">Heure:</label><br />
+            <input type="time" name="heure-debut"><br /><br />
+            <label for="heure">Heure:</label><br />
+            <input type="time" name="heure-fin"><br /><br />
 
-        <input type="submit" name="submit" value="Réserver">
-    </form>
-</div>
+            <input type="submit" name="submit" value="Réserver">
+        </form>
+    </div>
 
 </body>
 
