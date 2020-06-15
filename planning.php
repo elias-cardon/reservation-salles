@@ -47,31 +47,28 @@ $result = mysqli_fetch_all($query);
             <th>Jeudi</th>
 
             <th>Vendredi</th>
-
         </tr>
         </thead>
         <tbody>
         <?php
         for ($ligne = 8; $ligne <= 19; $ligne++) {
             echo "<tr>";
-            echo "<td>" . $ligne . "</td>";
+            echo "<td>" . $ligne .' h'. "</td>";
 
             for ($colonnes = 1; $colonnes <= 5; $colonnes++) {
                 echo "<td>";
                 foreach ($result as $value) {
                     $jour = date("w", strtotime($value[3]));
-                    $heure = date("H", strtotime($value[3])); 
+                    $heure = date("H", strtotime($value[3]));
                     if ($heure == $ligne && $jour == $colonnes) {
                         echo $value[7]. ' ' . $value[1];
-                        echo "<br /><button><a href='reservation.php'>Voir</a></button>";
+                        echo "<br/><button><a href='reservation.php'>Voir</a></button>";
                     }
                     if (empty($ligne)) { 
                         echo "<br /><button><a href='reservation-form.php'>Voir</a></button>";
                 
                 } 
                 }
-               
-                echo "</td>";
             }
         }
         echo "</tr>";

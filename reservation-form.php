@@ -1,16 +1,19 @@
 <?php
 session_start();
-$bdd = mysqli_connect("localhost", "root", "", 'reservationsalles');
+$bdd = new PDO('mysql:host=localhost;dbname=reservationsalles;charset=utf8', 'root', '' );
 
 if (isset($_POST['submit'])) {
 
     //Variables
     $titre = htmlspecialchars($_POST['titre']);
     $description = htmlspecialchars($_POST['description']);
-    $debut = htmlspecialchars($_POST['date-debut']) . " " . $_POST['heure-debut'];
-    $fin = htmlspecialchars($_POST['date-fin']) . " " . $_POST['heure-fin'];
-    $date = htmlspecialchars($_POST['date-debut']);
+    $debut = htmlspecialchars($_POST['date-debut']). " ".$_POST['heure-debut'];
+    $fin = htmlspecialchars($_POST['date-fin']). " ".$_POST['heure-fin'];
+    
 
+    $requete = $bdd->query("SELECT id FROM utilisateurs WHERE login ='".$_SESSION['login']."'");//concatenation no comprendo
+    $id = $requete->fetchAll();
+    $id_utilisateur = $id[0][0]; //c'est comment 
 
     $requete = "SELECT id FROM utilisateurs WHERE login ='" . $_SESSION['login'] . "'";
     $query = mysqli_query($bdd, $requete);
