@@ -1,6 +1,6 @@
 <?php
 session_start();
-$bdd = new PDO('mysql:host=localhost;dbname=reservationsalles;charset=utf8', 'root', '' );
+$bdd = mysqli_connect('localhost', 'root', '', 'reservationsalles');
 
 if (isset($_POST['submit'])) {
 
@@ -16,6 +16,7 @@ if (isset($_POST['submit'])) {
     $id_utilisateur = $id[0][0]; //c'est comment 
 
     $requete2 = $bdd->query("INSERT INTO reservations (titre, description, debut, fin, id_utilisateur) VALUES ('$titre', '$description', '$debut', '$fin', $id_utilisateur)");
+
 
 }
 
