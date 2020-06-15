@@ -1,7 +1,6 @@
 <?php session_start();
 $bdd = mysqli_connect("localhost", "root", "", 'reservationsalles');
 
-//if (isset($_GET['submit'])) {
 
 //$login = $_GET['login'];
 $requete = "SELECT * FROM utilisateurs INNER JOIN reservations ON utilisateurs.id = reservations.id_utilisateur ";
@@ -43,6 +42,13 @@ echo "</div>";
     }
 </style>
 
+<!DOCTYPE html>
+
+<body>
+<header>
+    <?php include("include/header.php") ?>
+</header>
+</body>
 
 
 
