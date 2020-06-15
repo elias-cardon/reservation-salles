@@ -53,7 +53,7 @@ $result = mysqli_fetch_all($query);
         <?php
         for ($ligne = 8; $ligne <= 19; $ligne++) {
             echo "<tr>";
-            echo "<td>" . $ligne . "</td>";
+            echo "<td>" . $ligne .' h'. "</td>";
 
             for ($colonnes = 1; $colonnes <= 5; $colonnes++) {
                 echo "<td>";
@@ -61,7 +61,8 @@ $result = mysqli_fetch_all($query);
                     $jour = date("w", strtotime($value[3]));
                     $heure = date("H", strtotime($value[3]));
                     if ($heure == $ligne && $jour == $colonnes) {
-                        echo $value[7]. ' ' . $value[2];
+                        echo $value[7]. ' ' . $value[1];
+                        echo "<br/><button><a href='reservation.php'>Voir</a></button>";
                     }
                 }
             }
