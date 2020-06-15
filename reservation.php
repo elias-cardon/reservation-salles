@@ -7,7 +7,7 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Planning</title>
+    <title>Reservation</title>
     <link rel="stylesheet" href="css/index.css">
 
 </head>
@@ -21,9 +21,10 @@ session_start();
 <?php
 $bdd = mysqli_connect("localhost", "root", "", 'reservationsalles');
 
-$requete = "SELECT * FROM utilisateurs INNER JOIN reservations ON utilisateurs.id = reservations.id_utilisateur ";
+$requete = "SELECT * FROM utilisateurs INNER JOIN reservations ON utilisateurs.id = reservations.id_utilisateur";
 $query = mysqli_query($bdd, $requete);
 $id = mysqli_fetch_all($query);
+$id_reservation = $_GET['id'];
 
 echo "<div class=\"center\">";
 echo "<table>";

@@ -1,6 +1,6 @@
 <?php session_start();
 
-if (isset($_POST["deconnexion"])) {
+if (isset($_GET["deconnexion"])) {
     session_unset();
     session_destroy();
     header('Location:index.php');
@@ -63,11 +63,8 @@ $result = mysqli_fetch_all($query);
                     if ($heure == $ligne && $jour == $colonnes) {
                         echo $value[7]. ' ' . $value[1];
                         echo "<br/><button><a href='reservation.php'>Voir</a></button>";
+                    
                     }
-                    if (empty($ligne)) { 
-                        echo "<br /><button><a href='reservation-form.php'>Voir</a></button>";
-                
-                } 
                 }
             }
         }
