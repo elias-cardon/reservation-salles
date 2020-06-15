@@ -8,7 +8,7 @@ if (isset($_POST['submit'])) {
     $titre = htmlspecialchars($_POST['titre']);
     $description = htmlspecialchars($_POST['description']);
     $debut = htmlspecialchars($_POST['date-debut']). " ".$_POST['heure-debut'];
-    $fin = htmlspecialchars($_POST['date-fin']). " ".$_POST['heure-fin']; 
+    $fin = htmlspecialchars($_POST['date-fin']). " ".$_POST['heure-fin'];
 
     $requete = "SELECT id FROM utilisateurs WHERE login ='" . $_SESSION['login'] . "'";
     $query = mysqli_query($bdd, $requete);
@@ -35,31 +35,31 @@ if (isset($_POST['submit'])) {
 
 <body>
 
-    <!--Header-->
-    <header>
-        <?php include('include/header.php'); ?>
-    </header>
+<!--Header-->
+<header>
+    <?php include('include/header.php'); ?>
+</header>
 
-    <!--Main-->
-    <div class="center-body">
-        <form action="#" method="post">
+<!--Main-->
+<div class="center-body">
+    <form action="#" method="post">
 
-            <label for="titre">Titre:</label><br />
-            <input type="text" name="titre"><br />
-            <label for="description">Description:</label><br />
-            <textarea id="description" name="description"></textarea><br />
-            <label for="debut">Début:</label><br />
-            <input type="date" name="date-debut"><br />
-            <label for="fin">Fin:</label><br />
-            <input type="date" name="date-fin"><br /><br />
-            <label for="heure">Heure:</label><br />
-            <input type="time" name="heure-debut"><br /><br />
-            <label for="heure">Heure:</label><br />
-            <input type="time" name="heure-fin"><br /><br />
+        <label for="titre">Titre:</label><br />
+        <input type="text" name="titre"><br />
+        <label for="description">Description:</label><br />
+        <textarea id="description" name="description"></textarea><br />
+        <label for="debut">Début:</label><br />
+        <input type="date" name="date-debut"><br />
+        <label for="fin">Fin:</label><br />
+        <input type="date" name="date-fin"><br /><br />
+        <label for="heure">Heure:</label><br />
+        <input type="time" name="heure-debut"><br /><br />
+        <label for="heure">Heure:</label><br />
+        <input type="time" name="heure-fin"><br /><br />
 
-            <input type="submit" name="submit" value="Réserver">
-        </form>
-    </div>
+        <input type="submit" name="submit" value="Réserver">
+    </form>
+</div>
 
 </body>
 
