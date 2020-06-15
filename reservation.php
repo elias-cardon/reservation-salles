@@ -15,5 +15,5 @@ $reserv = mysqli_fetch_all($query1);
 
 $requete2 = "";
 
-} 
+}
 
