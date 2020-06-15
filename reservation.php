@@ -8,6 +8,7 @@ $requete = "SELECT * FROM utilisateurs INNER JOIN reservations ON utilisateurs.i
 $query = mysqli_query($bdd, $requete);
 $id = mysqli_fetch_all($query);
 
+echo "<div class=\"center\">";
 echo "<table>";
 
 echo "<tr>";
@@ -21,6 +22,8 @@ foreach($id as $value){
         echo "<td>"."$value[5]"."</td>";
     echo "</tr>";
 }
+echo "</table>";
+echo "</div>";
 ?>
 
 <style>
@@ -33,6 +36,11 @@ foreach($id as $value){
     td, th{
     border:1px solid black;
 }
+    .center{
+        display: flex;
+        align-items: center;
+        height: 100%;
+    }
 </style>
 
 
