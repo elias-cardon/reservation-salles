@@ -9,6 +9,11 @@ if (isset($_POST['submit'])) {
     $description = htmlspecialchars($_POST['description']);
     $debut = htmlspecialchars($_POST['date-debut']). " ".$_POST['heure-debut'];
     $fin = htmlspecialchars($_POST['date-fin']). " ".$_POST['heure-fin'];
+    $creneaux = $debut + $fin;
+
+    if($creneaux > 1){
+        $erreur = "Votre creneaux ne doit pas dépasser 1h.";
+    }
     
 
     $requete = $bdd->query("SELECT id FROM utilisateurs WHERE login ='".$_SESSION['login']."'");//concatenation no comprendo
@@ -40,6 +45,11 @@ if (isset($_POST['submit'])) {
 <!--Main-->
 <div class="center-body">
     <form action="planning.php" method="post">
+        <?php
+            if(isset($erreur)) {
+                echo $erreur;
+            }
+        ?>
 
         <label for="titre">Titre:</label><br/>
         <input type="text" name="titre"><br/>
