@@ -47,7 +47,6 @@ $result = mysqli_fetch_all($query);
             <th>Jeudi</th>
 
             <th>Vendredi</th>
-
         </tr>
         </thead>
         <tbody>
@@ -60,14 +59,11 @@ $result = mysqli_fetch_all($query);
                 echo "<td>";
                 foreach ($result as $value) {
                     $jour = date("w", strtotime($value[3]));
-                    $heure = date("h", strtotime($value[3]));
+                    $heure = date("H", strtotime($value[3]));
                     if ($heure == $ligne && $jour == $colonnes) {
                         echo $value[7]. ' ' . $value[2];
-
-
                     }
                 }
-                echo "</td>";
             }
         }
         echo "</tr>";
