@@ -21,23 +21,24 @@ session_start();
 <?php
 $bdd = mysqli_connect("localhost", "root", "", 'reservationsalles');
 
-$requete = "SELECT * FROM utilisateurs INNER JOIN reservations ON utilisateurs.id = reservations.id_utilisateur";
+$requete = "SELECT login,titre,description FROM utilisateurs INNER JOIN reservations ON utilisateurs.id = reservations.id_utilisateur WHERE login ='" . $_SESSION['login'] . "' LIMIT 0,1";
 $query = mysqli_query($bdd, $requete);
 $id = mysqli_fetch_all($query);
 
-
 echo "<div class=\"center\">";
+
 echo "<table>";
 
 echo "<tr>";
 echo "<th>" . "Login" . "</th>";
 echo "<th>" . "Titre" . "</th>";
 echo "<th>" . "Description" . "</th>";
+
 foreach ($id as $value) {
     echo "<tr>";
+    echo "<td>" . "$value[0]" . "</td>";
+    echo "<td>" . "$value[1]" . "</td>";
     echo "<td>" . "$value[2]" . "</td>";
-    echo "<td>" . "$value[4]" . "</td>";
-    echo "<td>" . "$value[5]" . "</td>";
     echo "</tr>";
 }
 echo "</table>";
@@ -65,11 +66,41 @@ echo "</div>";
         align-items: center;
         height: 100%;
     }
+    /*TABLE*/
+
+    table {
+
+        width: 60%;
+        background: #dfdddd6b;
+        border-collapse: collapse;
+    }
+
+    table, td, th {
+        border: 1px solid rgba(185, 185, 185, 0.397);
+
+    }
+
+    th {
+
+
+        padding: 10px;
+        font-size: 20px;
+        color: #fff;
+        text-transform: uppercase;
+        background-color: rgb(20, 66, 68);
+
+
+    }
+
+    td {
+        text-align: center;
+        padding: 10px;
+        width: 500px;
+        height: 45px;
+    }
+
+    td:hover {
+        box-shadow: 300px 0 0 0 pink inset;
+    }
+
 </style>
-
-
-
-
-
-
-
