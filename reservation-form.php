@@ -21,8 +21,8 @@ if (isset($_POST['submit'])) {
     $requete2 = "INSERT INTO reservations (titre, description, debut, fin, id_utilisateur) VALUES ('$titre', '$description', '$debut', '$fin', $id_utilisateur)";
     $query1 = mysqli_query($bdd, $requete2);
 
-    //VERIFIER SI LA PLAGE HORAIRE ESt DISPONIBLE
-    $requete3 = "SELECT * FROM reservations WHERE reservations.id_utilisateur = 1";
+    //VERIFIER SI LA PLAGE HORAIRE EST DISPONIBLE
+    $requete3 = "SELECT * FROM reservations WHERE reservations.debut = 1 && reservations.fin = 1";
     $query2 = mysqli_query($bdd, $requete3);
     $id_utilisateur1 = mysqli_num_rows($query2);
 
