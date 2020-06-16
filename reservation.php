@@ -8,6 +8,7 @@ session_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reservation</title>
+    <link rel="stylesheet" href="css/reservation.css">
     <link rel="stylesheet" href="css/index.css">
 
 </head>
@@ -48,63 +49,3 @@ foreach ($id as $value) {
 echo "</table>";
 echo "</div>";
 ?>
-
-<style>
-
-    body
-    {
-        height: 100vh;
-    }
-
-    table {
-        border-collapse: collapse;
-        margin: auto;
-    }
-
-    td, th {
-        border: 1px solid black;
-    }
-
-    .center {
-        display: flex;
-        align-items: center;
-        height: 100%;
-    }
-    /*TABLE*/
-
-    table {
-
-        width: 60%;
-        background: #dfdddd6b;
-        border-collapse: collapse;
-    }
-
-    table, td, th {
-        border: 1px solid rgba(185, 185, 185, 0.397);
-
-    }
-
-    th {
-
-
-        padding: 10px;
-        font-size: 20px;
-        color: #fff;
-        text-transform: uppercase;
-        background-color: rgb(20, 66, 68);
-
-
-    }
-
-    td {
-        text-align: center;
-        padding: 10px;
-        width: 500px;
-        height: 45px;
-    }
-
-    td:hover {
-        box-shadow: 300px 0 0 0 pink inset;
-    }
-
-</style>
