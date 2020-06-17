@@ -63,7 +63,7 @@ $result1 = mysqli_fetch_assoc($query1);
             echo "<tr>";
             echo "<td>".$ligne."</td>";
 
-            for($colonne = 1; $colonne <= 7; $colonne++)
+            for($colonne = 1; $colonne <= 5; $colonne++)
             {
                 echo "<td>";
                 foreach($result as $value)
