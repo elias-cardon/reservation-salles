@@ -1,6 +1,6 @@
 <?php session_start();
 
-if (isset($_GET["deconnexion"])) {
+if (isset($_POST["deconnexion"])) {
     session_unset();
     session_destroy();
     header('Location:index.php');
@@ -29,6 +29,8 @@ $db = mysqli_connect("localhost", "root", "", "reservationsalles");
 $date = "SELECT * FROM reservations INNER JOIN utilisateurs ON reservations.id_utilisateur = utilisateurs.id";
 $query = mysqli_query($db, $date);
 $result = mysqli_fetch_all($query);
+$id_reservation = $_GET['id'];
+
 ?>
 
 <!--MAIN-->
@@ -62,7 +64,7 @@ $result = mysqli_fetch_all($query);
                     $heure = date("H", strtotime($value[3]));
                     if ($heure == $ligne && $jour == $colonnes) {
                         echo $value[7] . ' ' . $value[1];
-                        echo "<br/><button><a href='reservation.php'>Voir</a></button>";
+                        echo "<br/><button><a href='reservation.php?id= $id_reservation '>Voir</a></button>";
                     
                     }
                 }

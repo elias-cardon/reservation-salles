@@ -25,6 +25,7 @@ $bdd = mysqli_connect("localhost", "root", "", 'reservationsalles');
 $requete = "SELECT login,titre,description,debut,fin FROM utilisateurs INNER JOIN reservations ON utilisateurs.id = reservations.id_utilisateur WHERE login ='" . $_SESSION['login'] . "' LIMIT 0,1";
 $query = mysqli_query($bdd, $requete);
 $id = mysqli_fetch_all($query);
+$id_reservation = $_GET['id'];
 
 echo "<div class=\"center\">";
 
