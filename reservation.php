@@ -20,37 +20,33 @@ session_start();
 </body>
 </html>
 <?php
-//A REVOIR
+$id=$_SESSION['id'];
+$requete= "SELECT * FROM  reservations WHERE id ='$id'";
+$query=mysqli_query($bdd,$requete);
+$result=mysqli_fetch_array($query);
 
-$bdd = mysqli_connect("localhost", "root", "", 'reservationsalles');
-//A REVOIR
-
-//RECUP AVEC GET
-$id_get = "SELECT id_utilisateur FROM reservations";
-$query1 = mysqli_query($bdd, $id_get);
-$result1 = mysqli_fetch_assoc($query1);
-
-
-echo "<div class=\"center\">";
-
-echo "<table>";
-
-echo "<tr>";
-echo "<th>" . "Login" . "</th>";
-echo "<th>" . "Titre" . "</th>";
-echo "<th>" . "Description" . "</th>";
-echo "<th>" . "Début" . "</th>";
-echo "<th>" . "Fin" . "</th>";
-
-foreach ($id_get as $value) {
-    echo "<tr>";
-    echo "<td>" . "$value[0]" . "</td>";
-    echo "<td>" . "$value[1]" . "</td>";
-    echo "<td>" . "$value[2]" . "</td>";
-    echo "<td>" . "$value[3]" . "</td>";
-    echo "<td>" . "$value[4]" . "</td>";
-    echo "</tr>";
-}
-echo "</table>";
-echo "</div>";
+$login=$result['id_utilisateur'];
+$requete2="SELECT login from utilisateurs where id='$login'";
+$query2=mysqli_query($bdd,$requete2);
+$result2=mysqli_fetch_array($query2);
 ?>
+
+<form method="post">
+    <label>Login :</label>
+    <input disabled="disabled" type="text" name="login" value="<?php echo $result2['login'];?>">
+    <label>Titre :</label>
+    <input disabled="disabled" required type="text" name="titre" value="<?php  echo $result['titre']; ?>">
+    <label>Description :</label>
+    <textarea disabled="disabled" name="description"><?php  echo $result['description']; ?></textarea>
+    <label>Début :</label>
+    <input disabled="disabled" required name="datedebut" type="datetime-local" id="meeting-time" value="<?php echo SUBSTR($result['debut'], 0, 10)?>T<?php echo SUBSTR($result['debut'], 11, 8); ?>">
+    <label>Fin :</label>
+    <input disabled="disabled" required name="datefin" type="datetime-local" id="meeting-time" value="<?php echo SUBSTR($result['fin'], 0, 10)?>T<?php echo SUBSTR($result['fin'], 11, 8); ?>">
+    <?php if($_SESSION['login']=="admin" || $_SESSION['login']==$result2['login'])
+    {
+        ?>
+        <input type="submit" name="effacer" value="Supprimer">
+        <?php
+    }
+    ?>
+</form>
