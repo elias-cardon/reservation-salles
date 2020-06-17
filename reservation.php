@@ -23,7 +23,7 @@ session_start();
 //A REVOIR
 
 $bdd = mysqli_connect("localhost", "root", "", 'reservationsalles');
-                                                                                                                                                    //A REVOIR
+//A REVOIR
 
 //RECUP AVEC GET
 $id_get = "SELECT id_utilisateur FROM reservations";
