@@ -68,8 +68,8 @@ $result1 = mysqli_fetch_assoc($query1);
                     $heure = date("H", strtotime($value[3]));
                     if ($heure == $ligne && $jour == $colonnes) {
                         echo $value[7] . ' ' . $value[1];               //A REVOIR
-                        echo "<br/><button><a href='reservation.php?id_utilisateur= $result1'>Voir</a></button>";
-                    
+                        echo "<br/><button><a href='reservation.php'>Voir</a></button>";
+
                     }
                 }
             }
