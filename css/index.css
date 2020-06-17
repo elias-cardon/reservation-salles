@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Mukta&display=swap');
 
-*{
+* {
     margin: 0;
     padding: 0;
     font-family: 'Mukta', sans-serif;
@@ -83,14 +83,17 @@ h3 {
 /*****INDEX****/
 
 #banner {
-
     position: absolute;
     justify-content: center;
     height: 40%;
     width: 100%;
     background-color: rgb(245, 140, 222);
 }
-
+form
+{
+    display: flex;
+    justify-content: center;
+}
 h2 {
     display: flex;
     justify-content: center;
@@ -130,6 +133,7 @@ i {
     color: rgb(177, 122, 165);
     cursor: pointer;
     font-size: 33px;
+    margin: 4px;
 
 }
 
@@ -159,4 +163,3 @@ i:hover {
     margin-top: 60px;
 
 }
-
