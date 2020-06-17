@@ -83,14 +83,17 @@ h3 {
 /*****INDEX****/
 
 #banner {
-
     position: absolute;
     justify-content: center;
     height: 40%;
     width: 100%;
     background-color: rgb(245, 140, 222);
 }
-
+form
+{
+    display: flex;
+    justify-content: center;
+}
 h2 {
     display: flex;
     justify-content: center;
