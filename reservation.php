@@ -20,11 +20,16 @@ session_start();
 </body>
 </html>
 <?php
-$bdd = mysqli_connect("localhost", "root", "", 'reservationsalles');
+//A REVOIR
 
-$requete = "SELECT login,titre,description,debut,fin FROM utilisateurs INNER JOIN reservations ON utilisateurs.id = reservations.id_utilisateur WHERE login ='" . $_SESSION['login'] . "' LIMIT 0,1";
-$query = mysqli_query($bdd, $requete);
-$id = mysqli_fetch_all($query);
+$bdd = mysqli_connect("localhost", "root", "", 'reservationsalles');
+                                                                                                                                                    //A REVOIR
+
+//RECUP AVEC GET
+$id_get = "SELECT id_utilisateur FROM reservations";
+$query1 = mysqli_query($bdd, $id_get);
+$result1 = mysqli_fetch_assoc($query1);
+
 
 echo "<div class=\"center\">";
 

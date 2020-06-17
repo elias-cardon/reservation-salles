@@ -29,6 +29,12 @@ $db = mysqli_connect("localhost", "root", "", "reservationsalles");
 $date = "SELECT * FROM reservations INNER JOIN utilisateurs ON reservations.id_utilisateur = utilisateurs.id";
 $query = mysqli_query($db, $date);
 $result = mysqli_fetch_all($query);
+
+
+//RECUP AVEC GET
+$id_get = "SELECT id_utilisateur FROM reservations";
+$query1 = mysqli_query($db, $id_get);
+$result1 = mysqli_fetch_assoc($query1);
 ?>
 
 <!--MAIN-->
@@ -61,8 +67,8 @@ $result = mysqli_fetch_all($query);
                     $jour = date("w", strtotime($value[3]));
                     $heure = date("H", strtotime($value[3]));
                     if ($heure == $ligne && $jour == $colonnes) {
-                        echo $value[7] . ' ' . $value[1];
-                        echo "<br/><button><a href='reservation.php'>Voir</a></button>";
+                        echo $value[7] . ' ' . $value[1];               //A REVOIR
+                        echo "<br/><button><a href='reservation.php?id_utilisateur= $result1'>Voir</a></button>";
                     
                     }
                 }
