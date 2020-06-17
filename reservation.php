@@ -20,15 +20,15 @@ session_start();
 </body>
 </html>
 <?php
-//A REVOIR
 
 $bdd = mysqli_connect("localhost", "root", "", 'reservationsalles');
-//A REVOIR
-
+    
+$myId = $_GET['id'];
 //RECUP AVEC GET
-$id_get = "SELECT id_utilisateur FROM reservations";
-$query1 = mysqli_query($bdd, $id_get);
-$result1 = mysqli_fetch_assoc($query1);
+$db = mysqli_connect("localhost", "root", "", "reservationsalles");
+$date = "SELECT login, titre, description, debut, fin FROM reservations INNER JOIN utilisateurs ON reservations.id_utilisateur = utilisateurs.id WHERE reservations.id =$myId";
+$query = mysqli_query($db, $date);
+$result = mysqli_fetch_all($query);
 
 
 echo "<div class=\"center\">";
@@ -42,7 +42,7 @@ echo "<th>" . "Description" . "</th>";
 echo "<th>" . "Début" . "</th>";
 echo "<th>" . "Fin" . "</th>";
 
-foreach ($id as $value) {
+foreach ($result as $value) {
     echo "<tr>";
     echo "<td>" . "$value[0]" . "</td>";
     echo "<td>" . "$value[1]" . "</td>";
