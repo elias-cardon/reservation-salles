@@ -42,7 +42,7 @@ echo "<th>" . "Description" . "</th>";
 echo "<th>" . "Début" . "</th>";
 echo "<th>" . "Fin" . "</th>";
 
-foreach ($id as $value) {
+foreach ($id_get as $value) {
     echo "<tr>";
     echo "<td>" . "$value[0]" . "</td>";
     echo "<td>" . "$value[1]" . "</td>";
