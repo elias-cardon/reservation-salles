@@ -57,30 +57,24 @@ $result1 = mysqli_fetch_assoc($query1);
         </thead>
         <tbody>
         <?php
-
-        for($ligne =8; $ligne <= 19; $ligne++ )
-        {
+        for ($ligne = 8; $ligne <= 19; $ligne++) {
             echo "<tr>";
-            echo "<td>".$ligne."</td>";
+            echo "<td>" . $ligne . ' h' . "</td>";
 
-            for($colonne = 1; $colonne <= 5; $colonne++)
-            {
+            for ($colonnes = 1; $colonnes <= 5; $colonnes++) {
                 echo "<td>";
-                foreach($result as $value)
-                {
-                    $jour=date("w", strtotime($value[3]));
-                    $h=date("H", strtotime($value[3]));
-                    if($h==$ligne && $jour== $colonne)
-                    {
+                foreach ($result as $value) {
+                    $jour = date("w", strtotime($value[3]));
+                    $heure = date("H", strtotime($value[3]));
+                    if ($heure == $ligne && $jour == $colonnes) {
                         echo $value[7] . ' ' . $value[1];               //A REVOIR
-                        echo "<br/><button><a href='reservation.php'>Voir</a></button>";
+                        echo "<br/><button><a href='reservation.php?id_utilisateur= $result1'>Voir</a></button>";
+
                     }
                 }
-                echo "</td>";
             }
         }
         echo "</tr>";
-
         ?>
         </tbody>
     </table>
