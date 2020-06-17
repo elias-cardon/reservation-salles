@@ -10,6 +10,9 @@ if (isset($_POST['submit'])) {
     $debut = htmlspecialchars($_POST['date-debut']). " ".$_POST['heure-debut'];
     $fin = htmlspecialchars($_POST['date-fin']). " ".$_POST['heure-fin'];
 
+    //N'AUTORISER QU'UNE HEURE MAX DE RESERVATION
+
+    //INSERER RESERVATION DANS BDD
     $requete = "SELECT id FROM utilisateurs WHERE login ='" . $_SESSION['login'] . "'";
     $query = mysqli_query($bdd, $requete);
     $id = mysqli_fetch_all($query);
@@ -17,6 +20,19 @@ if (isset($_POST['submit'])) {
 
     $requete2 = "INSERT INTO reservations (titre, description, debut, fin, id_utilisateur) VALUES ('$titre', '$description', '$debut', '$fin', $id_utilisateur)";
     $query1 = mysqli_query($bdd, $requete2);
+
+    //VERIFIER SI LA PLAGE HORAIRE EST DISPONIBLE
+    $requete3 = "SELECT * FROM reservations WHERE reservations.debut = 1 && reservations.fin = 1";
+    $query2 = mysqli_query($bdd, $requete3);
+    $id_utilisateur1 = mysqli_num_rows($query2);
+
+    if($id_utilisateur1 == 1){
+        header('location:reservation-form.php');
+        echo   "La plage horaire selectionnée n'est pas disponible.";
+    }
+
+
+
 
 }
 
