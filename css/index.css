@@ -163,6 +163,11 @@ h3 {
 
 }
 
+.btn_center{
+    display: flex;
+    flex-direction: row;
+}
+
 }
 @media screen and (max-width:1199px) and (min-width:1000px){
     form
@@ -186,6 +191,12 @@ h3 {
     cursor: pointer;
 
 }
+
+.btn_center{
+    display: flex;
+    flex-direction: row;
+}
+
 
 }
 @media screen and (max-width:999px) and (min-width:700px){
