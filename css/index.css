@@ -31,8 +31,6 @@ header {
 }
 
 .btn {
-    display: flex;
-    justify-content: space-evenly;
     color: white;
     cursor: pointer;
     font-weight: bold;
@@ -188,6 +186,7 @@ h3 {
     cursor: pointer;
 
 }
+
 }
 @media screen and (max-width:999px) and (min-width:700px){
 #nav-index{
@@ -212,8 +211,9 @@ h3 {
 
 }
 
-div .btn{
-    display: inline;
+.btn_center{
+    display: flex;
+    flex-direction: row;
 }
 }
 @media screen and (max-width:699px){
@@ -255,5 +255,10 @@ div .btn{
     
     
     }
+
+.btn_center{
+    display: flex;
+    flex-direction: row;
+}
     }
 
